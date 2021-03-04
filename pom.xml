@@ -4,6 +4,22 @@
   <artifactId>WEB2_P1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  
+  <dependencies>
+  
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4.1208</version>
+		</dependency>
+  </dependencies>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -21,6 +37,24 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <artifactItems>
+            <artifactItem>
+              <groupId>proyecto-sufrimiento</groupId>
+              <artifactId>sufrimiento</artifactId>
+              <version>8.0.0</version>
+              <destFileName>sufrimiento.jar</destFileName>
+            </artifactItem>
+          </artifactItems>
+          <!-- other configurations here -->
+        </configuration>
+      </plugin>
+      
     </plugins>
   </build>
   <properties>
